@@ -1,4 +1,12 @@
 
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/pgaijin66/dea)](https://goreportcard.com/report/github.com/liangyaopei/checker)
+[![Go Reference](https://pkg.go.dev/badge/github.com/liangyaopei/checker.svg)](https://pkg.go.dev/github.com/liangyaopei/checker)
+[![Build Status](https://github.com/pgaijin66/dea/actions/workflows/ci.yml/badge.svg)](https://github.com/pgaijin66/dea/actions/workflows/ci.yml)
+![License](https://img.shields.io/dub/l/vibe-d.svg)
+[![Coverage Status](https://coveralls.io/repos/github/pgaijin66/dea/badge.svg?branch=main)](https://coveralls.io/github/pgaijin66/dea/checker?branch=main)
+
+
 # Table of contents
 
 - [Disposable Email Address ( DEA ) checker](#disposable-email-address--dea--checker)
