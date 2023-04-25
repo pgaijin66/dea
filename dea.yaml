@@ -16,6 +16,7 @@ allowList:
 # Source: https://raw.githubusercontent.com/disposable-email-domains/disposable-email-domains/master/disposable_email_blocklist.conf
 blockList:
     providers:
+        - "meidecn.com"
         - "0-mail.com"
         - "027168.com"
         - "0815.ru"
