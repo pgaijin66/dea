@@ -95,12 +95,13 @@ Returns:
 
 `false` if the email address is not a disposable email address.
 
-## Future plans
+## TODOs
+
+- [ ] Allow users to pass in their own allows and block listed domains
 
 - [ ] Find a way to validate against custom domains as some people use their custom domain base email address
 
 - [ ] Implement ML for increased accuracy
-
 
 ## FAQs
 
