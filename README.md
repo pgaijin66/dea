@@ -99,7 +99,7 @@ Returns:
 
 - [ ] Allow users to pass in their own allows and block listed domains
 
-- [ ] Find a way to validate against custom domains as some people use their custom domain base email address
+- [ ] Perform a deep check to detect against dea using MX and TXT records
 
 - [ ] Implement ML for increased accuracy
 

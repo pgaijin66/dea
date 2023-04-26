@@ -29,6 +29,7 @@ var allowedListedProviders = []string{
 	"mail.com",
 }
 
+// Below are the list of DEA providers
 var blockListedProviders = []string{
 	"0-mail.com",
 	"027168.com",
