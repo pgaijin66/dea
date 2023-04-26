@@ -1,56 +1,51 @@
 package dea
 
 import (
-	"fmt"
+	"net"
+	"regexp"
 	"strings"
-
-	"github.com/spf13/viper"
 )
 
-type emailProviders struct {
-	allowList []string `mapstructure:"allowList.providers"`
-	blockList []string `mapstructure:"blockList.providers"`
-}
-
-func loadConfig() (emailProviders, error) {
-
-	viper.SetConfigName("dea")
-	viper.SetConfigType("yaml")
-	viper.AddConfigPath(".")
-
-	err := viper.ReadInConfig()
-	if err != nil {
-		return emailProviders{}, fmt.Errorf("error loading config file: %s", err)
-	}
-
-	var providers emailProviders
-
-	err = viper.Unmarshal(&providers)
-	if err != nil {
-		return emailProviders{}, fmt.Errorf("fatal error config file: %s", err)
-	}
-
-	providers.allowList = viper.GetStringSlice("allowList.providers")
-	providers.blockList = viper.GetStringSlice("blockList.providers")
-
-	return providers, nil
-}
-
 func IsDisposableEmail(email string) (bool, error) {
-	providers, _ := loadConfig()
+	providers := NewEmailProviders()
 
-	// Check if provider is in list of blocked email providers
+	// Step 1: Check if provider is in list of blocked email providers
 	for _, blocked := range providers.blockList {
 		if strings.HasSuffix(email, blocked) {
 			// If provider is in blocked list, check if provider is explicitly allowed
 			for _, allowed := range providers.allowList {
 				if strings.HasSuffix(email, allowed) {
 					return false, nil
-				} else {
-					return true, nil
 				}
 			}
 		}
+	}
+
+	// Step 2: Check if the domain has an SPF record and check if the length of SPF record are generally greater than 24 chars for a well configured
+	// email provider
+	parts := strings.Split(email, "@")
+	if len(parts) != 2 {
+		return true, nil
+	}
+	domain := parts[1]
+
+	txtRecords, err := net.LookupTXT(domain)
+	if err != nil {
+		return true, nil
+	}
+
+	for _, spfRecord := range txtRecords {
+		if strings.HasPrefix(spfRecord, "v=spf1 ") {
+			if len(spfRecord) < 25 {
+				return true, nil
+			}
+		}
+	}
+
+	// Step 3: check for email addresses that contain random strings of characters or misspelled words
+	pattern := regexp.MustCompile(`^([a-z0-9._%+\-]+|([a-z0-9]+[.\-_])*[a-z0-9]+)@(10|anon|example|guerrilla|fake|disposable|temp)([.\-_][a-z]{2,})+$`)
+	if pattern.MatchString(email) {
+		return true, nil
 	}
 
 	return false, nil

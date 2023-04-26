@@ -13,8 +13,8 @@ func TestIsDisposableEmail(t *testing.T) {
 	}{
 		{name: "Check against valid email", inputEmail: "demo@gmail.com", want: false},
 		{name: "Check against invalid email", inputEmail: "demo@027168.com", want: true},
-		{name: "Check against random string", inputEmail: "asdsadasdkjh@asdjkhasd.com", want: false},
-		{name: "Check against empty strng", inputEmail: "", want: false},
+		{name: "Check against random string", inputEmail: "asdsadasdkjh@asdjkhasd.com", want: true},
+		{name: "Check against empty strng", inputEmail: "", want: true},
 	}
 
 	for _, tc := range tests {

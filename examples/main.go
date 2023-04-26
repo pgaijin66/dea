@@ -7,18 +7,16 @@ import (
 )
 
 func main() {
-	validEmail := "demo@gmail.com"
-	invalidEmail := "asd@0wnd.org"
+	validEmail := "nawang81@gmail.com"
+	invalidEmail := "salima9536@soombo.com"
 
 	res1, _ := dea.IsDisposableEmail(validEmail)
 	res2, _ := dea.IsDisposableEmail(invalidEmail)
 
 	// Check if email provided is not a disposable email address
-	if !res1 {
-		fmt.Printf("%v is a not disposable email address \n", validEmail)
+	if res1 {
+		fmt.Printf("%v is a disposable email address \n", validEmail)
 	}
-
-	fmt.Println(res2)
 
 	// Check if email provided is  a disposable email address
 	if res2 {

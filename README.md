@@ -39,6 +39,8 @@ go get -u github.com/pgaijin66/dea
 
 ## Usage
 
+First of all you would need to create a 
+
 Here's an example of how to use this package:
 
 ```go
