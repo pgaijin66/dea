@@ -21,8 +21,16 @@ func IsDisposableEmail(email string) (bool, error) {
 		}
 	}
 
+	// Check if provider is in list of part of the allowed email provider. If yes then return
+	for _, allowed := range providers.allowList {
+		if strings.HasSuffix(email, allowed) {
+			return false, nil
+		}
+	}
+
 	// Step 2: Check if the domain has an SPF record and check if the length of SPF record are generally greater than 24 chars for a well configured
 	// email provider
+	// TODO: Do more indepth checks against, MX and SPF records.
 	parts := strings.Split(email, "@")
 	if len(parts) != 2 {
 		return true, nil

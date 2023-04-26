@@ -13,8 +13,7 @@ func NewEmailProviders() *emailProviders {
 	return &providers
 }
 
-// CommonPasswords list is from
-// https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10k-most-common.txt
+// Common legit email providers
 var allowedListedProviders = []string{
 	"gmail.com",
 	"outlook.com",
