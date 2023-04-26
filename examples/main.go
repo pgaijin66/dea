@@ -10,7 +10,11 @@ func main() {
 	validEmail := "nawang81@gmail.com"
 	invalidEmail := "salima9536@soombo.com"
 
-	res1, _ := dea.IsDisposableEmail(validEmail)
+	res1, err := dea.IsDisposableEmail(validEmail)
+	if err != nil {
+		fmt.Printf("%v", err)
+	}
+
 	res2, _ := dea.IsDisposableEmail(invalidEmail)
 
 	// Check if email provided is not a disposable email address

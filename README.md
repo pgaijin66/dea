@@ -10,7 +10,7 @@
 # Table of contents
 
 - [Disposable Email Address ( DEA ) checker](#disposable-email-address--dea--checker)
-- [Who does `dea` works ?](#who-does-dea-works-)
+- [How does `dea` works ?](#who-does-dea-works-)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -28,7 +28,7 @@
 
 A `dea` is a email verification package that can be used to determine if the email address provided in the input is a disposable email address (DEA) or not.
 
-## Who does `dea` works ?
+## How does `dea` works ?
 
 `dea` works by checking email legitimacey using a 3 step process:
 
@@ -68,8 +68,10 @@ import (
 func main() {
 	input := "demo@2wc.info"
 
-	res1, _ := dea.IsDisposableEmail(input)
-
+	res1, err := dea.IsDisposableEmail(input)
+	if err != nil {
+		fmt.Printf("%v", err)
+	}
 	// Check if email provided is a disposable email address
 	if res1 {
 		fmt.Printf("%v is a disposable email address \n", validEmail)
@@ -80,7 +82,7 @@ func main() {
 ```
 
 ## Reference
-`IsDisposableEmail(email string) bool`
+`IsDisposableEmail(email string) ( bool , error )`
 
 This function takes an email address as input and returns a boolean value indicating whether the email address is a disposable email address or not.
 
