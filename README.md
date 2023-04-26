@@ -10,16 +10,17 @@
 # Table of contents
 
 - [Disposable Email Address ( DEA ) checker](#disposable-email-address--dea--checker)
-- [How does `dea` works ?](#who-does-dea-works-)
+- [How does `dea` works ?](#how-does-dea-works-)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [API Reference](#api-reference)
+- [Reference](#reference)
+- [Future plans](#future-plans)
 - [FAQs](#faqs)
   - [What are DEA ( Disposable Email Addresses ) ?](#what-are-dea--disposable-email-addresses--)
   - [Why should i use `dea` ?](#why-should-i-use-dea-)
   - [Will using `dea` be suffecient to check for email legitimacy ?](#will-using-dea-be-suffecient-to-check-for-email-legitimacy-)
-  - [Will by test gmail account be considered as DEA ?](#will-by-test-gmail-account-be-considered-as-dea-)
+  - [Will my test gmail account be considered as DEA ?](#will-my-test-gmail-account-be-considered-as-dea-)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -93,6 +94,12 @@ Returns:
 `true` if the email address is a disposable email address.
 
 `false` if the email address is not a disposable email address.
+
+## Future plans
+
+- [ ] Find a way to validate against custom domains as some people use their custom domain base email address
+
+- [ ] Implement ML for increased accuracy
 
 
 ## FAQs
