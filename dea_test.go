@@ -11,7 +11,7 @@ func TestIsDisposableEmail(t *testing.T) {
 		inputEmail string
 		want       bool
 	}{
-		{name: "Check against valid email", inputEmail: "demo@gmail.com", want: false},
+		{name: "Check against valid email", inputEmail: "prabesh66@gmail.com", want: false},
 		{name: "Check against invalid email", inputEmail: "demo@027168.com", want: true},
 		{name: "Check against random string", inputEmail: "asdsadasdkjh@asdjkhasd.com", want: true},
 		{name: "Check against empty strng", inputEmail: "", want: true},
