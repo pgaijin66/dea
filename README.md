@@ -31,13 +31,7 @@ A `dea` is a email verification package that can be used to determine if the ema
 
 ## How does `dea` works ?
 
-`dea` works by checking email legitimacey using a 3 step process:
-
-1. Checking if the email provider is in the list of blocklisted domains.
-
-2. Checking if the `SPF` record for the email provider is legit.
-
-3. Checking if the email addresses that contain random strings of characters or misspelled words 
+`dea` works by checking email legitimacey by checking against the list of blocklisted DEA providers. Along with that it checks the `SPF` record for the email provider is legit and performs other checks.
 
 ## Requirements
 
