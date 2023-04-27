@@ -116,6 +116,8 @@ Using a disposable email address (DEA) checker in your project can provide sever
 
 3. Enhance data quality: DEAs can provide inaccurate or incomplete data when used in forms or surveys. By checking for DEAs, you can ensure that you are collecting accurate and complete data from your users.
 
+4. Stop wasting company resource: DEAs can result in wasted resources for a company. For example, if a company sends email notifications to a DEA, the email will bounce back and the company will have wasted time and resources trying to reach an invalid email address. This can also affect the company's email deliverability rate, which can impact its ability to communicate effectively with its users.
+
 ### Will using `dea` be suffecient to check for email legitimacy ?
 
 Accourding to my test of using `dea` and 1000+ disposable email address, it was able to reliably detect and flag around 95% of the disposable email addresses. Please be aware that just using `dea` alone will not be suffecient to be assured that user who signed up will be using legitimate email and not disposable one. But, if used along with other features like using activation email, sending random one-off email address after random number of days for legitimacy verification etc would work as a pretty reliable way to detect if the email is a legitimate users email address or a one-off disposable email address.
