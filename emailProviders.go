@@ -464,6 +464,7 @@ var blockListedProviders = []string{
 	"bepureme.com",
 	"beribase.ru",
 	"beribaza.ru",
+	"anonaddy.com",
 	"berirabotay.ru",
 	"best-john-boats.com",
 	"bestchoiceusedcar.com",
